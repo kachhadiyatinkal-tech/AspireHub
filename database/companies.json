@@ -1,0 +1,30 @@
+[
+    {
+      "name": "TechCorp Solutions",
+      "email": "contact@techcorp.com",
+      "password": "hashedPass1",
+      "isApproved": true,
+      "createdAt": { "$date": "2026-02-14T06:30:00Z" }
+    },
+    {
+      "name": "Future Innovations",
+      "email": "info@futureinnovations.com",
+      "password": "hashedPass2",
+      "isApproved": false,
+      "createdAt": { "$date": "2026-02-14T06:30:00Z" }
+    },
+    {
+      "name": "Global Tech Ltd.",
+      "email": "hr@globaltech.com",
+      "password": "hashedPass3",
+      "isApproved": true,
+      "createdAt": { "$date": "2026-02-14T06:30:00Z" }
+    },
+    {
+      "name": "NextGen Solutions",
+      "email": "contact@nextgensolutions.com",
+      "password": "hashedPass4",
+      "isApproved": false,
+      "createdAt": { "$date": "2026-02-14T06:30:00Z" }
+    }
+  ]

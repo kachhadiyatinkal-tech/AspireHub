@@ -1,0 +1,75 @@
+<div class="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+  <nav class="bg-gray-900 border-b border-gray-700 shadow-lg">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="flex justify-between items-center h-20">
+        <a
+          routerLink="/"
+          class="text-3xl font-extrabold tracking-tight text-indigo-400 hover:text-indigo-300 transition"
+        >
+          AspireHub
+        </a>
+
+        <div class="flex items-center gap-8 text-base font-semibold">
+          @if (auth.isLoggedIn()) {
+            <a
+              [routerLink]="dashboardPath()"
+              routerLinkActive="text-indigo-400 border-b-4 border-indigo-400"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="pb-2 text-gray-300 hover:text-white transition"
+            >
+              Dashboard
+            </a>
+
+            <button
+              type="button"
+              (click)="logout()"
+              class="rounded-xl bg-red-600 px-6 py-2.5 text-white shadow-md hover:bg-red-500 hover:shadow-lg transition"
+            >
+              Logout
+            </button>
+          } @else {
+            <a
+              routerLink="/about"
+              routerLinkActive="text-indigo-400 border-b-4 border-indigo-400"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="pb-2 text-gray-300 hover:text-white transition"
+            >
+              About
+            </a>
+
+            <a
+              routerLink="/company"
+              routerLinkActive="text-indigo-400 border-b-4 border-indigo-400"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="pb-2 text-gray-300 hover:text-white transition"
+            >
+              Company
+            </a>
+
+            <a
+              routerLink="/student"
+              routerLinkActive="text-indigo-400 border-b-4 border-indigo-400"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="pb-2 text-gray-300 hover:text-white transition"
+            >
+              Students
+            </a>
+
+            <a
+              routerLink="/login"
+              class="rounded-xl bg-indigo-500 px-7 py-2.5 text-white shadow-md hover:bg-indigo-400 hover:shadow-lg transition"
+            >
+              Login
+            </a>
+          }
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-1 max-w-6xl w-full mx-auto px-6 sm:px-8 lg:px-10 py-12">
+    <div class="rounded-2xl bg-gray-900/80 backdrop-blur shadow-xl p-8 border border-gray-700 min-h-[60vh]">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>

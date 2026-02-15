@@ -1,0 +1,109 @@
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 px-4">
+  <!-- Rectangle Card -->
+  <div class="bg-gray-900/80 backdrop-blur-md border border-gray-700 shadow-2xl w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden">
+
+    <!-- Left Side: Login Promotion -->
+    <div class="bg-indigo-700 flex flex-col justify-center items-center p-10 text-center">
+      <h2 class="text-3xl font-bold text-white mb-6">Already a member?</h2>
+      <p class="text-gray-100 mb-6">Login to your account and continue exploring placements.</p>
+      <a
+        routerLink="/login"
+        class="px-6 py-3 bg-white text-indigo-500 font-semibold rounded-xl shadow-md hover:bg-gray-100 transition transform hover:scale-105"
+      >
+        Login Now
+      </a>
+    </div>
+
+    <!-- Right Side: Register Form -->
+    <div class="p-10 flex flex-col justify-center">
+      <h1 class="text-4xl font-bold text-indigo-400 mb-8">Register</h1>
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-6">
+
+        <!-- Role Selector -->
+        <div>
+          <select
+            formControlName="role"
+            class="w-full rounded-xl border border-gray-700 bg-gray-800 px-4 py-3 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+          >
+            <option value="student">Student</option>
+            <option value="company">Company</option>
+          </select>
+        </div>
+
+        <!-- Name -->
+        <div>
+          <input
+            type="text"
+            formControlName="name"
+            placeholder="Your name"
+            class="w-full rounded-xl border border-gray-700 bg-gray-800 px-4 py-3 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+          />
+          @if (form.get('name')?.invalid && form.get('name')?.touched) {
+            <p class="mt-1 text-sm text-red-400">Name is required.</p>
+          }
+        </div>
+
+        <!-- Email -->
+        <div>
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="you@example.com"
+            class="w-full rounded-xl border border-gray-700 bg-gray-800 px-4 py-3 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+          />
+          @if (form.get('email')?.invalid && form.get('email')?.touched) {
+            <p class="mt-1 text-sm text-red-400">
+              @if (form.get('email')?.errors?.['required']) { Email is required. }
+              @if (form.get('email')?.errors?.['email']) { Enter a valid email. }
+            </p>
+          }
+        </div>
+
+        <!-- Password -->
+        <div>
+          <input
+            type="password"
+            formControlName="password"
+            placeholder="••••••••"
+            class="w-full rounded-xl border border-gray-700 bg-gray-800 px-4 py-3 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+          />
+          @if (form.get('password')?.invalid && form.get('password')?.touched) {
+            <p class="mt-1 text-sm text-red-400">
+              @if (form.get('password')?.errors?.['required']) { Password is required. }
+              @if (form.get('password')?.errors?.['minlength']) { Password must be at least 6 characters. }
+            </p>
+          }
+        </div>
+
+        <!-- Branch (Student Only) -->
+        @if (form.get('role')?.value === 'student') {
+          <div>
+            <input
+              type="text"
+              formControlName="branch"
+              placeholder="e.g. CSE, ECE"
+              class="w-full rounded-xl border border-gray-700 bg-gray-800 px-4 py-3 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+            />
+          </div>
+        }
+
+        <!-- Error Message -->
+        @if (error) {
+          <div class="rounded-xl bg-red-900/40 border border-red-700 text-red-300 px-4 py-2 text-sm text-center">
+            {{ error }}
+          </div>
+        }
+
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          [disabled]="loading"
+          class="w-full rounded-xl bg-indigo-500 px-6 py-3 text-white font-semibold shadow-lg hover:bg-indigo-400 hover:shadow-2xl transition transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {{ loading ? 'Registering...' : 'Register' }}
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

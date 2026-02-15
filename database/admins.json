@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Main Admin",
+    "email": "admin@placement.com",
+    "password": "admin123",
+    "createdAt": "2026-02-14T10:30:00.000Z"
+  },
+  {
+    "name": "Placement Officer",
+    "email": "officer@placement.com",
+    "password": "officer123",
+    "createdAt": "2026-02-14T10:35:00.000Z"
+  }
+]

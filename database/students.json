@@ -1,0 +1,42 @@
+[
+    {
+      "name": "Tinkal Kachhadiya",
+      "email": "tinkal@example.com",
+      "password": "hashedPassword1",
+      "branch": "Computer Science",
+      "skills": ["JavaScript", "React", "Node.js"],
+      "resume": "https://example.com/resume/tinkal.pdf",
+      "placed": false,
+      "createdAt": { "$date": "2026-02-14T06:30:00Z" }
+    },
+    {
+      "name": "Amit Patel",
+      "email": "amit@example.com",
+      "password": "hashedPassword2",
+      "branch": "Electrical",
+      "skills": ["MATLAB", "Circuit Design"],
+      "resume": "https://example.com/resume/amit.pdf",
+      "placed": true,
+      "createdAt": { "$date": "2026-02-14T06:30:00Z" }
+    },
+    {
+      "name": "Sneha Sharma",
+      "email": "sneha@example.com",
+      "password": "hashedPassword3",
+      "branch": "Mechanical",
+      "skills": ["AutoCAD", "SolidWorks"],
+      "resume": "https://example.com/resume/sneha.pdf",
+      "placed": false,
+      "createdAt": { "$date": "2026-02-14T06:30:00Z" }
+    },
+    {
+      "name": "Rohit Mehta",
+      "email": "rohit@example.com",
+      "password": "hashedPassword4",
+      "branch": "Computer Science",
+      "skills": ["Python", "Data Analysis"],
+      "resume": "https://example.com/resume/rohit.pdf",
+      "placed": true,
+      "createdAt": { "$date": "2026-02-14T06:30:00Z" }
+    }
+  ]

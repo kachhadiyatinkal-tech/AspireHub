@@ -1,0 +1,42 @@
+[
+    {
+      "title": "Frontend Developer",
+      "description": "Work on React and UI development",
+      "eligibility": "Computer Science, JavaScript skills",
+      "company": { "$oid": "6990519cf583210839a32ad6" },
+      "applicants": [
+        { "student": { "$oid": "699051a9f583210839a32adb" }, "status": "Applied" },
+        { "student": { "$oid": "699051a9f583210839a32adc" }, "status": "Selected" }
+      ],
+      "createdAt": { "$date": "2026-02-14T06:30:00Z" }
+    },
+    {
+      "title": "Backend Developer",
+      "description": "Node.js and database management",
+      "eligibility": "Computer Science, Node.js skills",
+      "company": { "$oid": "6990519cf583210839a32ad7" },
+      "applicants": [
+        { "student": { "$oid": "699051a9f583210839a32adc" }, "status": "Applied" }
+      ],
+      "createdAt": { "$date": "2026-02-14T06:30:00Z" }
+    },
+    {
+      "title": "Electrical Engineer Intern",
+      "description": "Assist with circuit design and testing",
+      "eligibility": "Electrical branch",
+      "company": { "$oid": "6990519cf583210839a32ad8 " },
+      "applicants": [
+        { "student": { "$oid": "699051a9f583210839a32ade" }, "status": "Rejected" },
+        { "student": { "$oid": "699051a9f583210839a32adc" }, "status": "Applied" }
+      ],
+      "createdAt": { "$date": "2026-02-14T06:30:00Z" }
+    },
+    {
+      "title": "Data Analyst Intern",
+      "description": "Analyze datasets using Python",
+      "eligibility": "Computer Science, Python skills",
+      "company": { "$oid": "6990519cf583210839a32ad9" },
+      "applicants": [],
+      "createdAt": { "$date": "2026-02-14T06:30:00Z" }
+    }
+  ]
